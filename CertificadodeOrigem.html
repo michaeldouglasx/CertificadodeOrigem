@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,12 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Estilos para impressão */
+
+        .font-code{
+            font-family:"consolas" ;
+        }
+
+
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
@@ -37,18 +41,18 @@
                 border: 2px solid #e5e7eb;
             }
         }
-        /* Estilos para a tabela xadrez */
-        .table-chess tbody tr:nth-child(odd) td:nth-child(even) { background-color: #f9fafb; } /* gray-50 */
-        .table-chess tbody tr:nth-child(even) td:nth-child(odd) { background-color: #f9fafb; } /* gray-50 */
+       
+        .table-chess tbody tr:nth-child(odd) td:nth-child(even) { background-color: #f9fafb; } 
+        .table-chess tbody tr:nth-child(even) td:nth-child(odd) { background-color: #f9fafb; } 
         .table-chess th, .table-chess td {
-            border-right: 1px solid #e5e7eb; /* gray-200 */
+            border-right: 1px solid #e5e7eb; 
         }
         .table-chess th:last-child, .table-chess td:last-child {
             border-right: none;
         }
-        /* Estilo para a tabela de histórico (linhas alternadas) */
+        
         .history-table tbody tr:nth-child(even) {
-            background-color: #f9fafb; /* gray-50 */
+            background-color: #f3f4f6; 
         }
         .certificate-container {
             position: relative;
@@ -57,191 +61,192 @@
 </head>
 <body class="bg-gray-100 p-4 sm:p-6 lg:p-8">
 
-    <!-- Página 1 -->
+    
     <div class="page-container mb-8">
         <div class="certificate-container w-full max-w-4xl bg-white rounded-lg shadow-2xl p-6 sm:p-8 md:p-12 mx-auto">
-            <!-- Cabeçalho -->
-            <header class="relative z-10 flex flex-col sm:flex-row justify-center items-center text-center border-b-2 border-gray-200 pb-6 mb-8 gap-8">
-                <div>
-                    <h1 class="font-bold text-lg sm:text-xl text-gray-700">BEM-TE-VI</h1>
-                    <p class="text-sm sm:text-base text-gray-500 max-w-md">Plataforma Nacional de Compartilhamento e Integração de Dados e Informações Sobre o Uso da Fauna em Cativeiro</p>
-                </div>
+            
+            <header class="relative z-10 flex justify-between items-center border-b-2 border-gray-200 pb-6 mb-8">
                 <div class="flex-shrink-0">
                      <img src="https://placehold.co/120x120/FEF9C3/F59E0B?text=Logo+da+bem+te+vi" alt="Logo Bem-te-vi" class="h-24 w-24 sm:h-28 sm:w-28 object-contain">
                 </div>
+                <div class="text-center flex-grow">
+                    <h1 class="font-bold text-lg sm:text-xl text-gray-700">BEM-TE-VI</h1>
+                    <p class="text-sm sm:text-base text-gray-500 max-w-md mx-auto">Plataforma Nacional de Compartilhamento e Integração de Dados e Informações Sobre o Uso da Fauna em Cativeiro</p>
+                </div>
+                <div class="w-24 sm:w-28 flex-shrink-0"></div> 
             </header>
 
-            <!-- Título Principal -->
-            <div class="relative z-10 text-center mb-10 flex items-baseline justify-center gap-x-3">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">Certificado de Origem</h2>
-                <p class="text-2xl text-gray-500 font-medium">nº XXXXXXX</p>
+           
+            <div class="relative z-10 text-center mb-10 flex items-baseline justify-center gap-x-4">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">Certificado de Origem 1234567</h2>
+                
             </div>
 
-            <!-- Conteúdo da Página 1 -->
+            
             <div class="relative z-10 space-y-8">
-                <!-- Seção Espécimes -->
+                
                 <div>
-                    <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">Espécimes</h3>
-                    <div class="overflow-x-auto rounded-lg border border-gray-200">
-                        <table class="table-chess min-w-full divide-y divide-gray-200 text-base">
-                            <thead class="bg-gray-50">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Nome Popular</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Nome Científico</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Marcação</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Tipo Marcação</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Sexo</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-4 py-3 whitespace-nowrap">tucano</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">Ramphastos toco</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">CETAS-DF 12 46640</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">anilha</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 whitespace-nowrap">arara-canindé</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">Ara ararauna</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">CETAS-DF 12 46641</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">microchip</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">M</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">Espécime</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-base">
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Nome Científico:</strong> XXXXXXXXXXXXXXXXX</p>
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Marcação:</strong> XXXXXXXXXXXXXXXXX</p>
                     </div>
                 </div>
 
-                <!-- Seção Origem -->
                  <div>
                     <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">Origem</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-base">
                         <p class="md:col-span-2 bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Empreendimento:</strong> </p>
-                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">CPF/CNPJ:</strong> 000000000000</p>
-                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Categoria:</strong> 000000000000</p>
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">CPF/CNPJ:</strong> <span>000000000000</span></p>
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Categoria:</strong> <span>000000000000</span></p>
                         <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Município/UF:</strong> Brasília/DF</p>
-                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Nota Fiscal:</strong> 000000000000</p>
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Nota Fiscal:</strong> <span>000000000000</span></p>
                     </div>
                 </div>
 
-                <!-- Seção Proprietário -->
+                
                 <div>
-                    <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">Proprietário</h3>
+                    <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-4">Proprietário Atual</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-base">
                         <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Nome:</strong> Michael Douglas Santos</p>
-                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">CPF/CNPJ:</strong> 000000000000</p>
+                        <p class="bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">CPF/CNPJ:</strong> <span>000.000.0000</span></p>
                         <p class="md:col-span-2 bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Endereço:</strong> Quadra X, Conjunto X - Setor Norte</p>
                         <p class="md:col-span-2 bg-gray-100 rounded-md px-4 py-2"><strong class="font-medium text-gray-500">Município/UF:</strong> Brasília/DF</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Rodapé com Data e Código -->
-            <footer class="relative z-10 mt-12 pt-8 border-t-2 border-dashed border-gray-300">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
-                     <div>
-                        <p class="text-base font-semibold text-gray-500 uppercase tracking-wider">Data de Emissão</p>
-                        <p class="text-xl font-bold text-gray-800 mt-1">xx/xx/xxxx</p>
-                        <p class="text-lg font-medium text-gray-600">às hh:mm:ss</p>
-                    </div>
-                    <div>
-                        <p class="text-base font-semibold text-gray-500 uppercase tracking-wider">Código de Controle</p>
-                        <p class="text-xl font-bold text-gray-800 mt-1">XXXXXXXXXXXXX</p>
-                    </div>
+            <footer class="relative z-10 mt-12 pt-8 border-t-2 border-dashed border-gray-300 overflow-hidden">
+                
+                <div class="absolute inset-0 flex items-end justify-center pointer-events-none pb-4" aria-hidden="true">
+                    <span class="font-code text-5xl md:text-6xl font-black text-red-500 opacity-10 select-none tracking-tight">1LA2B.3C4B.5F0O</span>
                 </div>
-                <div class="text-center text-sm text-gray-400 mt-6">
-                    Página 1 de 2
-                </div>
-                <div class="text-center text-sm text-gray-600 mt-6">
-                    <p>Para verificar a autenticidade deste documento acesse o endereço:</p>
-                    <a href="https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php" class="text-blue-600 hover:underline" target="_blank">https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php</a>
+                
+                <div class="relative"> 
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+                         <div>
+                            <p class="text-base font-semibold text-gray-500 uppercase tracking-wider mb-2">Data de Emissão</p>
+                            <div class="bg-gray-100 rounded-md px-4 py-2">
+                                <p class="text-xl font-bold text-gray-800">xx/xx/xxxx</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-base font-semibold text-gray-500 uppercase tracking-wider mb-2">Código de Controle</p>
+                             <div class="bg-gray-100 rounded-md px-4 py-2">
+                                <p class="font-code text-xl font-bold text-gray-800">1LA2B.3C4B.5F0O</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-sm text-gray-600 mt-6">
+                        <p>Para verificar a autenticidade deste documento acesse o endereço:</p>
+                        <a href="https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php" class="text-blue-600 hover:underline" target="_blank">https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php</a>
+                    </div>
+                    <div class="text-center text-sm text-gray-400 mt-6">
+                        Certificado de origem XXXXX, Código de Controle <span class="font-code">1LA2B.3C4B.5F0O</span>, Página 1 de 2
+                    </div>
                 </div>
             </footer>
         </div>
     </div>
     
-    <!-- Página 2 -->
+
     <div class="page-container">
-         <div class="certificate-container w-full max-w-4xl bg-white rounded-lg shadow-2xl p-6 sm:p-8 md:p-12 mx-auto">
-            <!-- Cabeçalho -->
-            <header class="relative z-10 flex flex-col sm:flex-row justify-center items-center text-center border-b-2 border-gray-200 pb-6 mb-8 gap-8">
-                <div>
-                    <h1 class="font-bold text-lg sm:text-xl text-gray-700">BEM-TE-VI</h1>
-                    <p class="text-sm sm:text-base text-gray-500 max-w-md">Plataforma Nacional de Compartilhamento e Integração de Dados e Informações Sobre o Uso da Fauna em Cativeiro</p>
-                </div>
-                <div class="flex-shrink-0">
-                     <img src="https://placehold.co/120x120/FEF9C3/F59E0B?text=Logo+da+bem+te+vi" alt="Logo Bem-te-vi" class="h-24 w-24 sm:h-28 sm:w-28 object-contain">
-                </div>
-            </header>
-
-            <!-- Título Principal -->
-             <div class="relative z-10 text-center mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">Histórico de Transferências</h2>
-            </div>
+        
+         <div class="certificate-container w-full max-w-4xl bg-white rounded-lg shadow-2xl p-6 sm:p-8 md:p-12 mx-auto min-h-[1100px] flex flex-col">
             
-            <!-- Conteúdo da Página 2 -->
-             <div class="relative z-10">
-                <div class="rounded-lg border border-gray-200">
-                    <table class="history-table w-full text-base">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Data</th>
-                                <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Evento</th>
-                                <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">Origem/Destinatário</th>
-                                <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">UF/Município</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-4 py-3">01.fev.2020</td>
-                                <td class="px-4 py-3">Nascimento</td>
-                                <td class="px-4 py-3">Criadouro Comercial "Bico Torto"</td>
-                                <td class="px-4 py-3">MG/ Belo Horizonte</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">09.Set.2020</td>
-                                <td class="px-4 py-3">Transferência entre Empreendimento</td>
-                                <td class="px-4 py-3">Criadouro Comercial Bicho Preso</td>
-                                <td class="px-4 py-3">DF/Brasília</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">07.Mar.2021</td>
-                                <td class="px-4 py-3">Transferência entre Empreendimento</td>
-                                <td class="px-4 py-3">Pet Shop "Bicho Legal"</td>
-                                <td class="px-4 py-3">PR/ Curitiba</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">10.Abr.2021</td>
-                                <td class="px-4 py-3">Venda ao Consumidor</td>
-                                <td class="px-4 py-3">José ** ********</td>
-                                <td class="px-4 py-3">PR/ Curitiba</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">25.Set.2023</td>
-                                <td class="px-4 py-3">Mudança de Titularidade</td>
-                                <td class="px-4 py-3">Maria ***** ************</td>
-                                <td class="px-4 py-3">PA/ Belém</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+          
+            <div class="flex-grow">
+                
+                <header class="relative z-10 flex justify-between items-center border-b-2 border-gray-200 pb-6 mb-8">
+                    <div class="flex-shrink-0">
+                         <img src="https://placehold.co/120x120/FEF9C3/F59E0B?text=Logo+da+bem+te+vi" alt="Logo Bem-te-vi" class="h-24 w-24 sm:h-28 sm:w-28 object-contain">
+                    </div>
+                    <div class="text-center flex-grow">
+                        <h1 class="font-bold text-lg sm:text-xl text-gray-700">BEM-TE-VI</h1>
+                        <p class="text-sm sm:text-base text-gray-500 max-w-md mx-auto">Plataforma Nacional de Compartilhamento e Integração de Dados e Informações Sobre o Uso da Fauna em Cativeiro</p>
+                    </div>
+                    <div class="w-24 sm:w-28 flex-shrink-0"></div> 
+                </header>
 
-            <!-- Rodapé com Data e Código -->
-            <footer class="relative z-10 mt-12 pt-8 border-t-2 border-dashed border-gray-300">
-                <div class="flex justify-center text-center">
-                    <div>
-                        <p class="text-base font-semibold text-gray-500 uppercase tracking-wider">Código de Controle</p>
-                        <p class="text-xl font-bold text-gray-800 mt-1">XXXXXXXXXXXXX</p>
+                
+                 <div class="relative z-10 text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">Histórico de Transferências</h2>
+                </div>
+                
+                
+                 <div class="relative z-10">
+                    <div class="rounded-lg border border-gray-200 overflow-x-auto">
+                        <table class="history-table w-full text-sm min-w-[640px]">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Data</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Evento</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Origem/Destinatário</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">UF/Município</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3">01.fev.2020</td>
+                                    <td class="px-4 py-3">Nascimento</td>
+                                    <td class="px-4 py-3">Criadouro Comercial "Bico Torto"</td>
+                                    <td class="px-4 py-3">MG/ Belo Horizonte</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">09.Set.2020</td>
+                                    <td class="px-4 py-3">Transferência entre Empreendimento</td>
+                                    <td class="px-4 py-3">Criadouro Comercial Bicho Preso</td>
+                                    <td class="px-4 py-3">DF/Brasília</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">07.Mar.2021</td>
+                                    <td class="px-4 py-3">Transferência entre Empreendimento</td>
+                                    <td class="px-4 py-3">Pet Shop "Bicho Legal"</td>
+                                    <td class="px-4 py-3">PR/ Curitiba</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">10.Abr.2021</td>
+                                    <td class="px-4 py-3">Venda ao Consumidor</td>
+                                    <td class="px-4 py-3">José ** ********</td>
+                                    <td class="px-4 py-3">PR/ Curitiba</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">25.Set.2023</td>
+                                    <td class="px-4 py-3">Mudança de Titularidade</td>
+                                    <td class="px-4 py-3">Maria ***** ************</td>
+                                    <td class="px-4 py-3">PA/ Belém</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="text-center text-sm text-gray-600 mt-6">
-                    <p>Para verificar a autenticidade deste documento acesse o endereço:</p>
-                    <a href="https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php" class="text-blue-600 hover:underline" target="_blank">https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php</a>
+            </div>
+            <footer class="relative z-10 mt-12 pt-8 border-t-2 border-dashed border-gray-300 overflow-hidden">
+                <div class="absolute inset-0 flex items-end justify-center pointer-events-none pb-4" aria-hidden="true">
+                    <span class="font-code text-5xl md:text-6xl font-black text-red-500 opacity-10 select-none tracking-tight">1LA2B.3C4B.5F0O</span>
                 </div>
-                <div class="text-center text-sm text-gray-400 mt-2">
-                    Página 2 de 2
+
+                <div class="relative"> 
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+                         <div>
+                            <p class="text-base font-semibold text-gray-500 uppercase tracking-wider mb-2">Data de Emissão</p>
+                             <div class="bg-gray-100 rounded-md px-4 py-2">
+                                <p class="text-xl font-bold text-gray-800">xx/xx/xxxx</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-base font-semibold text-gray-500 uppercase tracking-wider mb-2">Código de Controle</p>
+                             <div class="bg-gray-100 rounded-md px-4 py-2">
+                                <p class="font-code text-xl font-bold text-gray-800">1LA2B.3C4B.5F0O</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-sm text-gray-600 mt-6">
+                        <p>Para verificar a autenticidade deste documento acesse o endereço:</p>
+                        <a href="https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php" class="text-blue-600 hover:underline" target="_blank">https://servicos.ibama.gov.br/ctf/publico/fauna/validar_qrcode.php</a>
+                    </div>
+                    <div class="text-center text-sm text-gray-400 mt-6">
+                        Certificado de origem XXXXX, Código de Controle <span class="font-code">1LA2B.3C4B.5F0O</span>, Página 2 de 2
+                    </div>
                 </div>
             </footer>
         </div>
